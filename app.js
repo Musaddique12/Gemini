@@ -31,5 +31,11 @@ app.post('/getResponse', (req, res, next) => {
         })
 })
 
+app.use('*',()=>{
+    res.status(404).json({
+        msg:'Bad Request'
+    })
+})
+
 
 module.exports = app;
