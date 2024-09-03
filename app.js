@@ -3,9 +3,11 @@ const express = require('express')
 const app = express();
 const body_Parser = require('body-parser')
 const { GoogleGenerativeAI } = require("@google/generative-ai");
+const cors=require('cors')
 
 
 app.use(body_Parser.json())// Body Parser use to take input from body 
+app.use(cors())
 
 app.post('/getResponse', (req, res, next) => {
     console.log(req.body.question)
